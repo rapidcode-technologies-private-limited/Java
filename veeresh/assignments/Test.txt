@@ -1,0 +1,401 @@
+
+
+														JAVA LEVEL-01
+										
+	NOTE:	Attempt all question with description.
+	1.What are the main features of Java?
+	2.What are the fundamental principles of object oriented programming?
+	3.What do you mean by inheritance in java?
+	4. What is polymorphism in java?
+	5. Does java supports multiple inheritance?
+	6.What is the difference between constructor and method?
+	7.Can we overload the main() method?
+	8.How the exceptions are handled in java?
+	9.What are the differences between method overloading and method overriding?
+	10.What is the use of final keyword in java?
+	11. What is garbage collection in java?
+	12. Explain JDK, JRE and JVM?
+	13. What is the difference between break and continue statements?
+	
+	
+														OBJECTIVEs
+														
+	Q-1.Which one of these lists contains only Java programming language keywords?
+
+	A.	class, if, void, long, Int, continue
+	B.	goto, instanceof, native, finally, default, throws
+	C.	try, virtual, throw, final, volatile, transient
+	D.	strictfp, constant, super, implements, do
+	E.	byte, break, assert, switch, include
+		
+		
+	Q-2.Which is a valid keyword in java?
+
+	A.	interface	
+	B.	string
+	C.	Float
+	D.	unsigned	
+	
+	Q-3.Which three are legal array declarations?
+
+	A.int [] myScores [];
+	B.char [] myChars;
+	C.int [6] myScores;
+	D.Dog myDogs [];
+	E.Dog myDogs [7];
+	
+	Q-4.public interface Foo 
+	{ 
+		int k = 4; /* Line 3 */
+	}
+	Which three piece of codes are equivalent to line 3?
+	1.final int k = 4;
+	2.public int k = 4;
+	3.static int k = 4;
+	4.abstract int k = 4;
+	5.volatile int k = 4;
+	6.protected int k = 4;
+	A.	1, 2 and 3
+	B.	2, 3 and 4
+	C.	3, 4 and 5
+	D.	4, 5 and 6
+	
+	Q-5.Which is the valid declarations within an interface definition?
+
+	A.	public double methoda();
+	B.	public final double methoda();
+	C.	static void methoda(double d1);
+	D.	protected void methoda(double d1);
+				
+	Q-6.class PassA 
+	{
+		public static void main(String [] args) 
+		{
+			PassA p = new PassA();
+			p.start();
+		}
+
+		void start() 
+		{
+			long [] a1 = {3,4,5};
+			long [] a2 = fix(a1);
+			System.out.print(a1[0] + a1[1] + a1[2] + " ");
+			System.out.println(a2[0] + a2[1] + a2[2]);
+		}
+
+		long [] fix(long [] a3) 
+		{
+			a3[1] = 7;
+			return a3;
+		}
+	}
+	A.	12 15
+	B.	15 15
+	C.	3 4 5 3 7 5
+	D.	3 7 5 3 7 5			
+	
+	Q-7.class Test 
+	{
+		public static void main(String [] args) 
+		{
+			Test p = new Test();
+			p.start();
+		}
+
+		void start() 
+		{
+			boolean b1 = false;
+			boolean b2 = fix(b1);
+			System.out.println(b1 + " " + b2);
+		}
+
+		boolean fix(boolean b1) 
+		{
+			b1 = true;
+			return b1;
+		}
+	}
+	A.	true true
+	B.	false true
+	C.	true false
+	D.	false false
+	
+	Q-8.class BitShift 
+	{
+		public static void main(String [] args) 
+		{
+			int x = 0x80000000;
+			System.out.print(x + " and  ");
+			x = x >>> 31;
+			System.out.println(x);
+		}
+	}
+	A.	-2147483648 and 1
+	B.	0x80000000 and 0x00000001
+	C.	-2147483648 and -1
+	D.	1 and -2147483648
+	
+	Q-9.What will be the output of the program?
+
+	class Equals 
+	{
+		public static void main(String [] args) 
+		{
+			int x = 100;
+			double y = 100.1;
+			boolean b = (x = y); /* Line 7 */
+			System.out.println(b);
+		}
+	}
+	A.	true
+	B.	false
+	C.	Compilation fails	
+	D.	An exception is thrown at runtime
+	
+	Q-10.What will be the output of the program?
+
+	class Test 
+	{
+		public static void main(String [] args) 
+		{
+			int x= 0;
+			int y= 0;
+			for (int z = 0; z < 5; z++) 
+			{
+				if (( ++x > 2 ) && (++y > 2)) 
+				{
+					x++;
+				}
+			}
+			System.out.println(x + " " + y);
+		}
+	}
+	
+	Q-11.What will be the output of the program?
+
+	class Test 
+	{
+		public static void main(String [] args) 
+		{
+			int x= 0;
+			int y= 0;
+			for (int z = 0; z < 5; z++) 
+			{
+				if (( ++x > 2 ) && (++y > 2)) 
+				{
+					x++;
+				}
+			}
+			System.out.println(x + " " + y);
+		}
+	}
+	
+	Q-12.What will be the output of the program?
+
+	class SSBool 
+	{
+		public static void main(String [] args) 
+		{
+			boolean b1 = true;
+			boolean b2 = false;
+			boolean b3 = true;
+			if ( b1 & b2 | b2 & b3 | b2 ) /* Line 8 */
+				System.out.print("ok ");
+			if ( b1 & b2 | b2 & b3 | b2 | b1 ) /*Line 10*/
+				System.out.println("dokey");
+		}
+	}
+	A.	ok
+	B.	dokey
+	C.	ok dokey
+	D.	No output is produced
+	E.	Compilation error
+	
+	Q-13.print output.
+	public class Checkerboard{
+		public static void main(String[] args){
+			for(int i=0; i<8; ++i){
+				System.out.printf("%s* * * * * * * *\n", (i % 2 != 0 ? " " : ""));
+			}
+		}
+	}
+	
+	Q-14.What will be the output of this program?
+
+	class A
+	{
+		int i = 10;
+	}
+	 
+	class B extends A
+	{
+		int i = 20;
+	}
+	 
+	public class MainClass
+	{
+		public static void main(String[] args)
+		{
+			A a = new B();
+	 
+			System.out.println(a.i);
+		}
+	}
+	
+	Q-15.class A
+	{
+		{
+			System.out.println(1);
+		}
+	}
+	 
+	class B extends A
+	{
+		{
+			System.out.println(2);
+		}
+	}
+	 
+	class C extends B
+	{
+		{
+			System.out.println(3);
+		}
+	}
+	 
+	public class MainClass
+	{
+		public static void main(String[] args)
+		{
+			C c = new C();
+		}
+	}
+	
+	Q-16.class A
+	{
+		{
+			System.out.println(1);
+		}
+	}
+	 
+	class B extends A
+	{
+		{
+			System.out.println(2);
+		}
+	}
+	 
+	class C extends B
+	{
+		{
+			System.out.println(3);
+		}
+	}
+	 
+	public class MainClass
+	{
+		public static void main(String[] args)
+		{
+			C c = new C();
+		}
+	}
+	
+	Q-17.class Rc 
+	{ 
+		protected void getData() 
+		{ 
+			System.out.println("Inside Rc"); 
+		} 
+	} 
+	class Rapidcode extends Rc
+	{ 
+		protected void getData() 
+		{ 
+			System.out.println("Inside Rapidcode"); 
+		} 
+	} 
+	  
+	public class Test 
+	{ 
+		public static void main(String[] args) 
+		{ 
+			Rc obj = new RapidCode(); 
+			obj.getData(); 
+		} 
+	} 
+	
+	Q-18.class Test 
+	{ 
+		void myMethod() 
+		{ 
+			System.out.println("GeeksforGeeks"); 
+		} 
+	} 
+	public class Derived extends Test 
+	{ 
+		void myMethod() 
+		{ 
+			System.out.println("GFG"); 
+		} 
+		  
+		public static void main(String[] args) 
+		{ 
+			Derived object = new Test(); 
+			object.myMethod(); 
+		} 
+	} 
+	a) GeeksforGeeks
+	b) GFG
+	c) Compilation error
+	d) Runtime error
+	
+	Q-19.interface Rc
+	{ 
+		void myMethod(); 
+		void getInfo(); 
+	} 
+	  
+	abstract class Rapid implements Rc 
+	{ 
+		void getData() 
+		{ 
+			System.out.println("Rc"); 
+		} 
+	} 
+	  
+	public class Test extends Rapid 
+	{ 
+		public void myMethod() 
+		{ 
+			System.out.println("Rapidcode"); 
+		} 
+		public void getInfo() 
+		{ 
+			System.out.println("Rapid"); 
+		} 
+		  
+		public static void main(String[] args) 
+		{ 
+			Rapid obj = new Test(); 
+			obj.getInfo(); 
+		} 
+	}
+	
+	Q-20.
+		public class Main 
+		{ 
+			public static void rc(String s) 
+			{	 
+				System.out.println("String"); 
+			} 
+			public static void rc(Object o) 
+			{ 
+				System.out.println("Object"); 
+			} 
+
+			public static void main(String args[]) 
+			{ 
+				rc(null); 
+			} 
+		} 
+
